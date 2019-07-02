@@ -26,4 +26,16 @@ int getSensValue(char sensor){
 }
 
 
+void setSensMode(char sensor, char* mode){
+    char temp[50];
+
+    strcpy(temp, sensorMode);
+    temp[29] = sensor;
+
+    if(writeSToFile(temp, mode)== 0){
+        printf("error in opinning mode file \n");
+        exit(1);
+    }
+
+}
 
